@@ -1,2 +1,2 @@
-ocker compose build 
-docker compose up app
+docker-compose build 
+docker-compose up app
