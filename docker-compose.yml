@@ -1,0 +1,17 @@
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder  
+    command: echo "Build stage completed"
+    profiles: ["build-only"]  
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime  
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
